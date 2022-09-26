@@ -1,0 +1,3 @@
+JavaScript:
+si 4 + "7" resultado es 47 JavaScript permite hace operacion que los otros lenguajes no deja de hacerlo.
+1+ true resultado es 2 por que true = 1, JavaScript lo concatena.
