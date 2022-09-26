@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#fondo{
+    margin: auto;
+    margin-top: 2%;
+     height: 100%;
+     width: 50%;
+     border: 1px solid black;
+     padding: 10px;
+    }
+#fondo>h1{
+    margin:10px 5px;
+    padding:5px;
+}
+#fondo>p{
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+#contes{
+    width: 100%;
+    margin: 7px 1px;
+    height: 30px;
+}
+#fecha{
+    width: 100%;
+    margin: 7px 1px;
+    height: 30px;
+}
+
+#tiempo{
+    width: 100%;
+    margin: 7px 1px;
+    height: 30px;
+}
+
+.ad{
+    margin: 5px 2.5%;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    width: 95%;
+    height: 45px;
+}
+.rem{
+    margin: 5px 2.5%;
+    margin-top: 15px;
+    padding: 5px;
+    color: white;
+    background-color: red;
+    width: 95%;
+    border:1px solid red;
+    height: 45px;
+}
+.lis{
+    margin: 5px 1px;
+    padding: 5px 1px;
+    height: 100%;
+}
+.lis>.ite{border-bottom: 2px solid black;}
+
+.ite{
+    margin: 5px 1px;
+    padding: 5px 1px;
+    height: 100%;
+}
+.ite>p{
+    margin: 10px 5px;
+    padding: 5px 1px;
+    font-weight: bold;
+}
