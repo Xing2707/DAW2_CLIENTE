@@ -13,4 +13,4 @@ function buscar_caracte(){
 const p1=document.getElementById("nom");
 console.log(minombre);
 
-p1.innerHTML= "<p>nombre: " + minombre + " <br/><br/> La letra de 3 posicion de mi nombre es: "+buscar_caracte()+"</p>";
+p1.innerHTML= "<p>nombre: " + minombre + " <br/><br/> La letra de 3º posicion de mi nombre es: "+buscar_caracte()+"</p>";
