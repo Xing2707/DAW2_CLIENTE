@@ -1,0 +1,15 @@
+Los servidores web mas usado son :
+    1.Apache:
+        es un servidor web HTTP de codigo abierto, su funcionalidad principal es servir a los usuarios todos los ficheros necesarios para visualizar web (texts,imangenes,estilos,etc) mediante un navegador.
+        -Ventajas:
+            .Codigo abierto y gratuito, con gran comunidad de usuario
+            .Seguridad regular y actualizacion con frecuencia
+            .Estructura basada en modulo
+            .Multiplataforma, disponible en servidores Windows y Linux
+            .Personalizacion mediante .htaccess independiente en cada hosting
+            .Compatible con los principales CMS y tiendas online y plataformas e-learning
+        -Desventajas:
+            .Prenseta problema de estabilidad por encima de 10000 conexiones.
+            .Uso abusivo de modulos pueden generar brechas de Seguridad
+
+    2.
