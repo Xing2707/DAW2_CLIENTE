@@ -12,4 +12,42 @@ Los servidores web mas usado son :
             .Prenseta problema de estabilidad por encima de 10000 conexiones.
             .Uso abusivo de modulos pueden generar brechas de Seguridad
 
-    2.
+    2.Nginx:
+        es un servido de software libre y de codigo abierto, esta licenciado bajo una licencia BSD,existe version comercial de nginx con el nombre Nginx Plus.
+        Esta diseñado para ofrecer un bajo uso de memeria y alta concurrecia, en lugar de crear nuevos procesos para cada solicitud web se usa enfoque asincronico basado en eventos donde las solicitudes se manejan por un solo hilo
+        -Caracteristicas:
+            .Proxy inverso con cache
+            .IPv6
+            .Balanceo de carga
+            .Soporte FastCGI con almacenamiento en cache
+            .Websockets
+            .Manejo de archivos estaticos, archivo de indice auto indexacion
+            .Protocolo TLS /SSL con SNI
+    3.LiteSpeed:
+        Es un servido comercial muy veloz y eficiente que compite dierectamento con Nginx en cuestion de rendimiento
+        Es uun servidor web que dispone da la ultimas tecnologias, se hace uso de HTTP/3 y QUIC para acelerar enormemente la primera conexion con el servidor y tambien las siguientes.
+        -Caracteristicas:
+            .Diseño moderno y robusto
+            .Inclueye su propio sistema de cache que mejora el rendimeinto de servido cuando recibe muchos traficos web.
+            .Mejora ek rendimiento de gestores de contenido (WordPress,PrestaShop,Magento ....)
+            .Proceso PHP se ejecuta mas rapido
+            .Alto rendimiento para contenido dinamico con LSAPI(API de LiteSpeed)
+            .Soporta nuevo protocolo de transferencia de hipertexto HTTP/3
+            .Alto nivel de seguridad, facilita ataque contra lucha externo, vulnerabilidades o ataque de denegacion de servicio(DDos).
+    
+Servido de aplicaciones:
+    Es el dispositipo que proporciona servicio de aplicacion a las computadoras de cliente.
+    1.BEA WebLogic:
+        es una plataforma unificada y extensible para desarrollar y desplegar rapidamente, aplicaciones fiables, seguras, escalables y manejables
+        -Caracteristicas:
+            .Es el primer seridor de aplicacion independientes desarrollado en Java en conseguir la ceritificacion J2EE
+            .Soporta navegadores Web y otros clientes que usan HTTP.(Java(RMI o LLOP) y dispositivo moviles que usan WAP.)
+            .Los recursos cirticos se usan eficeintemente y la alta disponiblilidad esta asegurada a traves de uso de componentes Enterprise JavaBean y mecanismos como el clustering de WebLogic Serve para las paginas Web dinamicas y los almacenes de recursos y las conexiones compartidas
+            .ofrece una consla de administracion basada en Web para configurar y monitorizar los servicios.
+            .proporciona soporte de SSL para encriptar datos transmitidos a traves de WebLogic Server.
+            .proporciona una estrcha integracion de soporte con las bases de datos mas importantes, herramientas de desarrollo y otros entornos.
+    2. IBM WebSphere:
+
+    3. Sun-Netscape IPlanet
+
+Sistemas gestores de bases de datos:
