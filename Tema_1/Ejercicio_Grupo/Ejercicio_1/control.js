@@ -48,14 +48,22 @@ recipido4.addEventListener("click", function(){
     if(num6<0 || num6>9999){
         p4.innerHTML="El numero introducido es incorrecto"
     }else{
-        if(num6==0 || num6==1 || num6==2){
-            p4.innerHTML="Es capicua"
-        }else{
-            if(num6%2==0){
-                p4.innerHTML="No es capicua"
+        num6.toString();
+        let verdar=false;
+
+        for(let i=0; i<num6.length/2 && !verdar; i++){
+            let cont=num6.length-1;
+            if(num6.charAt(i)==num6.charAt(cont)){
+                verdar=true
             }else{
-                p4.innerHTML="Es capicua"
+                verdar=false
             }
+            cont--
+        }
+        if(verdar){
+            p4.innerHTML="Es Capicua"
+        }else{
+            p4.innerHTML="No es Capicua"
         }
     }
 })
