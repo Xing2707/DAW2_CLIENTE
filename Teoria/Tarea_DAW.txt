@@ -46,8 +46,59 @@ Servido de aplicaciones:
             .ofrece una consla de administracion basada en Web para configurar y monitorizar los servicios.
             .proporciona soporte de SSL para encriptar datos transmitidos a traves de WebLogic Server.
             .proporciona una estrcha integracion de soporte con las bases de datos mas importantes, herramientas de desarrollo y otros entornos.
-    2. IBM WebSphere:
+        
+    2. SUN ONE:
+        ofrece portabilidad de aplicaciones y rapides comercializacion para las aplicaciones Java y XML nuevas con compatibilidad de plataforma J2EE 1.3, permite crear aplicaciones basada en JSP(JavaServer Pages), Java Servlet y EJB(tecnologia Enterprise JavaBEans),es compatible con la necesitada de empresa, desde aplicacion para departamento hasta servicios de mision critica.
+        -Caracteristicas:
+            .integracion de SUN ONE Message Queue y servidor Hypertext Transfer Protocol(HTTP) a partir del servidor SUN ONE Web Server
+            .Escalabilidad con un rendimiento mejorado.
+            .Admision de servicios web: Java Web Services, SOAP,WSDL(Web Services Description Language)
+            .Interoperatividad con SUN ONE portal Server 6.0 y SUN ONE Directory Server
+            .Uso de la implementacion de referencias de J2EE(Java Platform Enterprise Edition)
 
-    3. Sun-Netscape IPlanet
-
+    3. Apache TomEE:
+        es capaz de ejecutar todas las funcionalidades actuales de Tomcat, es ligero(37MB sin necesitar requerimientos adicionales a los que ya usa Tomcat),no necesita nigun plugin especifico de TomEE para trabajar con TomEE.
+        -Componetes:
+            .Apache Tomcat(servido HTTP, JSP(Java Servlet y JavaServer Pages))
+            .Apache OpenEJB(EJB(Enterprise JavaBeans))
+            .Apache OpenWebBeans(CDI(COntexts and Dependency Injection))
+            .Apache OpenJPA(JPA(Java Persistence API))
+            .Apache Geronimo Transaction(JTA(Java Transaction API))
+            .Apache MyFaces(JSF(Java Server Faces))
+            .Apache ActiveMQ(JMS(Java Message Service))
+            .Apache CXF(Web Services)
+            .Apache Derby(RDBMS(Relactional Database Management System),JDBC(Java Database Connectivity))
 Sistemas gestores de bases de datos:
+    software que permite administrar una base de datos.
+    1.MySQL:
+        es una sistema de gestion de base de datos, esta basado en codigo abierto
+        -Caracteristicas:
+            .Arquitectura Cliente y Servidor: usa el modelo clinete y servidor(cliente y servido se comunica de manera diferente) para mejorar rendimeinto
+            .Compatibilidad con SQL: se ofrece compatibilidad con los otros motor de bases de datos(no tiene problemas en migrar a MySQL)
+            .Vistas: apartir de version 5.0 ofrece compatibilidad para poder configurar vista personalizado
+            .Procedimientos almacenados:no procesa la table directamente sino que a trabes de procedimeinto almacenado es posible incrementar eficacia de nuestra implementacion
+            .Desencadenantes:ademas de poder automatizar ciertas tareas dentro de base de datos, en el momento de producir un evento otro es lanzado para actualizar registro o optimizar su funcionalidad
+            .Transacciones:replesenta actuacion de diversa operacion, el sisteme se encarga de que todos los procedimeintos se establezcan correctamente o ninguna, en caso de vulnerabilidades el sistema opta por preservar la integridad de la base de datos resguardando la informacion
+
+    2.SQL Server:
+        sirve para almancenar toda la informacion deseada en base de datos relacionales, tambien para administrar dichos datos sin complicaciones
+        -funciones y Caracteristicas:
+            .variedad de herramientas destinadas a la getion y analisis de datos
+            .permite integrar muy facilmente datos en aplicaciones y aprovechar un amplio conjunto de servicios cognitivos con los que potenciar la inteligencia artificial en cuaquier escala de datos
+            .ofrecen alta disponibilidad con la que permite proceso de conmutacion mas rapido
+            .Inteligencia en todos sus datos con clusteres de Big Data: es capa de consultar todo los datos desde SQL Serve hasta Oracle sin necesidad de replicarlo
+            .Eleccion de Lenguaje y PLataforma
+            .Capacidades de bases de datos inteligentes
+            .Cifrado de datos y cumplimiento normativo
+            BI movil y escalabilidad: permite integrar facilmente sistema de gesto de base de datos en cuarlquier dispositivo y servicion de Azure para obtener mejor rendimiento y capacidad de analisis de los datos.
+    
+    3.Oracle:
+        Es una herrameita de gestion de base de datos, se usa principalmente por empresa grande para que puede controlar y genstinar una gran caintidad de contenidos desde un solo archivo.
+        -Caracteristicas:
+            .Control de acceso: usaba tecnologia avanzada para vigilar acceso a los datos
+            .Herramienta comoda de ultilizar: es muy intuitiva
+            .Gestion segura de la proteccion de los datos: hace copia de seguridad
+            .Vista materializada de Oracle:puede visualizar los datos de consulta en tablas con el formato de fila y columna
+        -clave de porque es mas usado:
+            .Permite eliminar infromacion redundante
+            .modificar datos e incluso procesar preguntas
