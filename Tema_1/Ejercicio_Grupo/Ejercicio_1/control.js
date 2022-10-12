@@ -67,15 +67,39 @@ recipido4.addEventListener("click", function(){
         }
     }
 })
+function pintar(){
+    let caja=document.getElementById("item")
+    caja.style.display="inline"
+}
 
-let recipido5=document.getElementById("boton5");
-recipido5.addEventListener("click", function(){
-    let radioC=document.getElementById("F").value
-    let radioF=document.getElementById("C").value
-    // let num7=document.getElementById("num7").value
-    // let p2=document.getElementById("parrafo2")
-    console.log(radioC);
-    console.log(radioF);
+function calcula_f(){
+    pintar()
+    let recipido5=document.getElementById("boton5")
+    let acum=0
+    let cont2=0;
+    while(cont2<10){
+        recipido5.addEventListener("click",function(){
+                acum+=(document.getElementById("num7").value-32)*0.5
+                cont2++
+                console.log(acum);
+            
+        })
+    }
+}
+
+function calcula_c(){
+    pintar()
+}
+
+
+// let recipido5=document.getElementById("boton5");
+// recipido5.addEventListener("click", function(){
+//     let radioC=document.getElementById("F").value
+//     let radioF=document.getElementById("C").value
+//     let num7=document.getElementById("num7").value
+//     let p2=document.getElementById("parrafo2")
+//     console.log(radioC);
+//     console.log(radioF);
     
-})
+// })
 

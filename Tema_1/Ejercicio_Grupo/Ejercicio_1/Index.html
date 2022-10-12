@@ -41,11 +41,13 @@
         <h1>8.Tabla de conversion de grados</h1>
         <div>
             seleccionar tipo:<br>
-               Fahrenheit<input type="radio" id="F" checked><br>
-               Celsius<input type="radio" id="C" checked><br>
-            itroduce valor:<input type="number" value="numero" id="num7"><br>
-            <button id="boton5">Enviar</button>
-            <p id="parrafo5"></p>
+               Fahrenheit<input type="radio" name="tipo" value="Fahrenheit" onclick="calcula_f()"><br>
+               Celsius<input type="radio" name="tipo" value="Celsius" onclick="calcula_c()"><br>
+            <div id="item" style="display:none">
+                itroduce valor:<input type="number" value="numero" id="num7"><br>
+                <button id="boton5">Enviar</button>
+                <p id="parrafo5"></p>
+            </div>
         </div>
 </body>
 </html>
