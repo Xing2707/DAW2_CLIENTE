@@ -67,39 +67,57 @@ recipido4.addEventListener("click", function(){
         }
     }
 })
+
 function pintar(){
     let caja=document.getElementById("item")
     caja.style.display="inline"
 }
 
+
 function calcula_f(){
     pintar()
     let recipido5=document.getElementById("boton5")
-    let acum=0
-    let cont2=0;
-    while(cont2<10){
-        recipido5.addEventListener("click",function(){
-                acum+=(document.getElementById("num7").value-32)*0.5
-                cont2++
-                console.log(acum);
-            
-        })
-    }
+    let cont=0
+    let resultado=[]
+    let valor=0
+    recipido5.addEventListener("click",function(){
+            valor=document.getElementById("num7").value
+            resultado[cont]=valor*5/9+32
+            console.log(resultado[cont]);
+            cont++
+        if(cont==10){
+            document.open()
+            for(let i=0; i<resultado.length; i++){
+                document.write(resultado[i]+"<br>")
+            }
+            document.close()
+        }
+        
+    })
 }
 
 function calcula_c(){
     pintar()
+    let recipido5=document.getElementById("boton5")
+    let cont=0
+    let resultado=[]
+    let valor=0
+    recipido5.addEventListener("click",function(){
+            valor=document.getElementById("num7").value
+            resultado[cont]=(valor-32)*5/9
+            console.log(resultado[cont]);
+            cont++
+        if(cont==10){
+            document.open()
+            for(let i=0; i<resultado.length; i++){
+                document.write(resultado[i]+"<br>")
+            }
+            document.close()
+        }
+        
+    })
 }
 
 
-// let recipido5=document.getElementById("boton5");
-// recipido5.addEventListener("click", function(){
-//     let radioC=document.getElementById("F").value
-//     let radioF=document.getElementById("C").value
-//     let num7=document.getElementById("num7").value
-//     let p2=document.getElementById("parrafo2")
-//     console.log(radioC);
-//     console.log(radioF);
-    
-// })
+
 
