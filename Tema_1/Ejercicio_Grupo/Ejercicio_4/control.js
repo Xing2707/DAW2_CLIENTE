@@ -6,10 +6,11 @@ recipido.addEventListener("click", function(){
         par.innerHTML="El numero introducido es incorrecto"
     }else{
         num.toString();
-        let verdar=false;
+        let verdar=true;
+        let cont=num.length-1;
 
-        for(let i=0; i<num.length/2 && !verdar; i++){
-            let cont=num.length-1;
+        for(let i=0; i<num.length/2 && verdar; i++){
+            console.log(num.charAt(i) + num.charAt(cont))
             if(num.charAt(i)==num.charAt(cont)){
                 verdar=true
             }else{

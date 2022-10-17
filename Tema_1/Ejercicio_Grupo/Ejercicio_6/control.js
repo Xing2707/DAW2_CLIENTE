@@ -20,7 +20,7 @@ if(tipo.substring(0,1).toLowerCase()=="fa" || tipo.charAt(0).toLowerCase()=="f")
     if(salir){
         document.open()
         for(let i=0; i<total.length; i++){
-            document.write(total[i]+" _ ")
+            document.write(total[i])
         }
         document.close()
     }
@@ -41,7 +41,7 @@ if(tipo.substring(0,1).toLowerCase()=="fa" || tipo.charAt(0).toLowerCase()=="f")
         if(salir){
             document.open()
             for(let i=0; i<total.length; i++){
-                document.write(total[i]+" _ ")
+                document.write(total[i])
             }
             document.close()
         }

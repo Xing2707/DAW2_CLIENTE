@@ -23,7 +23,7 @@ recipido.addEventListener("click",function(){
 
 let acep=document.getElementById("acepta").onclick = function aceptado(){
     document.open()
-    document.write("Numeros no aceptados"+arai)
+    document.write("Numeros no adivinado:"+arai)
     document.close()
 }
 
