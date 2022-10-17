@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="control.js"></script>
+</head>
+<body>
+    <h1>Lista de alumnos</h1>
+    <div id="caja1">
+        Indique numero alumno<input type="number" step="any" minlength="8" maxlength="20" id="NumAlu">
+            <button id="boton1">Enviar</button>
+    </div>
+    <div id="caja2" style="display:none;">
+        Nombre:<input type="text" id="nom">
+        nota:<input type="number" id="nota">
+        <button id="boton2">Enviar</button>
+    </div>
+    <div id="caja3" style="display:none;">
+        <ul id="lista">
+        </ul>
+    </div>
+    <div>
+        <p id="error"></p>
+    </div>
+</body>
+</html>
