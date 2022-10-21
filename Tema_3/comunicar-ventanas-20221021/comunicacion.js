@@ -7,8 +7,8 @@
 			
 
 			vs.onload=function(){
-
-				//vs.document.getElementById("texto").innerHTML="no nos gusta";
+				
+				vs.document.getElementById("texto").innerHTML=opener.getElementById("idUrl").value;
 
 			}
 
