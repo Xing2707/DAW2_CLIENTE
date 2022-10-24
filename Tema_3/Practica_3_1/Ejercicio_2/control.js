@@ -14,8 +14,8 @@ recipido.addEventListener("click",function(){
         let list2=document.getElementById("list2");
         let list3=document.getElementById("list3");
 
-        list1.innerHTML="Titlo tiene " + contarMayuscula(tit) +"Numero de mayusculas, " + contaMinuscula(tit) +" Numero de minusculas y una tamaño de: "+ tamtit ;
-        list2.innerHTML="Autor tiene " + contarMayuscula(aut) +"Numero de mayusculas, " + contaMinuscula(aut) +" Numero de minusculas y una tamaño de: "+ tamaut ;
+        list1.innerHTML="Titlo tiene Mayuscula: " + contarMayuscula(tit) +", Minuscula: " + contaMinuscula(tit) +" y una tamaño de: "+ tamtit ;
+        list2.innerHTML="Autor tiene Mayuscula: " + contarMayuscula(aut) +", Minuscula" + contaMinuscula(aut) +" y una tamaño de: "+ tamaut ;
         list3.innerHTML="año: "+ ani;
 
 })
@@ -36,10 +36,10 @@ function validarAnio(valor){
 
 function contarMayuscula(valor){
     valor=valor.split(" ").join("");
-    cont=0;
+    let cont="";
     for(let i=0; i<valor.length; i++){
         if(valor[i] == valor[i].toUpperCase()){
-            cont++;
+            cont+=valor[i]+", ";
         }
     }
     return cont;
@@ -48,10 +48,10 @@ function contarMayuscula(valor){
 
 function contaMinuscula(valor){
     valor=valor.split(" ").join("");
-    cont=0;
+    let cont="";
     for(let i=0; i<valor.length; i++){
         if(valor[i] == valor[i].toLowerCase()){
-            cont++;
+            cont+=valor[i]+", ";
         }
     }
     return cont;
