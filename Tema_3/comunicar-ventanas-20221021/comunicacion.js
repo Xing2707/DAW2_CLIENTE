@@ -2,13 +2,14 @@
 
 		function abrirVentana(){
 			
-			let vs = window.open("secundaria.html");	
+			
+			let vs = window.open("secundaria.html");
+			
 			
 			
 
 			vs.onload=function(){
-				
-				vs.document.getElementById("texto").innerHTML=opener.getElementById("idUrl").value;
+				 vs.document.getElementById("texto").innerHTML=opener.getElementById("idUrl").value;
 
 			}
 
@@ -19,6 +20,6 @@
 			// Cerrar Venta pasados un 3 segundos
 			//setTimeout(cerrarVentana,3000)
 
-			setTimeout(function(){vs.window.close()},3000);
+			// setTimeout(function(){vs.window.close()},3000);
 			
 		}
