@@ -25,7 +25,7 @@ recipido2.addEventListener("click",function(){
     let nombre=document.getElementById("nom").value
     let nota=parseInt(document.getElementById("not").value)
     if(cont<NumeroA){
-        if(nota>0 && nota<10){
+        if(nota>=0 && nota<=10){
             p1.innerHTML=null
             arai.push([nombre,nota])
             cont++
