@@ -9,14 +9,20 @@ let opcion;
     Menu(opcion);
 
     let listaTotal=document.getElementById("ListaTotal");
-    listaTotal.innerHTML+="<li>Sevilla:" +Sevilla.length+ "</li>";
-    listaTotal.innerHTML+="<li>Huelva:" +Huelva.length+ "</li>";
-    listaTotal.innerHTML+="<li>Cadiz:" +Cadiz.length+ "</li>";
+    let tit1=document.getElementById("tit1");
+        tit1.style.display="block";
+
+    listaTotal.innerHTML+=implimir("sevilla:",Sevilla.length);
+    listaTotal.innerHTML+=implimir("Huelva:",Huelva.length);
+    listaTotal.innerHTML+=implimir("Cadiz:",Cadiz.length);
 
     let ListaMedia=document.getElementById("ListaMedia");
-    ListaMedia.innerHTML+="<li>Sevilla: "+SueldoMedia(Sevilla)+"</li>";
-    ListaMedia.innerHTML+="<li>Huelva: "+SueldoMedia(Huelva)+"</li>";
-    ListaMedia.innerHTML+="<li>Cadiz: "+SueldoMedia(Cadiz)+"</li>";
+    let tit2=document.getElementById("tit2");
+        tit2.style.display="block";
+
+    ListaMedia.innerHTML+=implimir("sevilla:",SueldoMedia(Sevilla));
+    ListaMedia.innerHTML+=implimir("Huelva:",SueldoMedia(Huelva));
+    ListaMedia.innerHTML+=implimir("Cadiz:",SueldoMedia(Cadiz));
 function Menu(opcion){
     while(!salir){
         do{
@@ -68,9 +74,13 @@ function AniadirArray(opcion){
 }
 
 function SueldoMedia(array){
-    let media;
+    let media=0;
+    let delegacion=array.length;
     for(let i=0; i<array.length; i++){
-                media+=array[i][1];
+        media+=array[i][1];
     }
-    return media/array.length;
+    return media/delegacion;
+}
+function implimir(nombre,valor){
+    return "<li>"+nombre+" "+valor+"</li>";
 }
