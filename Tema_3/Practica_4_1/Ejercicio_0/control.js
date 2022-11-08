@@ -32,13 +32,12 @@ function Menu(opcion){
                 alert("Error deben Introducir un numero valido");
             }else{
                 if(opcion==0){
-                    if(Sevilla.length<4 && Huelva.length<4 && Cadiz.length<4){
+                    if(Sevilla.length<4 || Huelva.length<4 || Cadiz.length<4){
                         alert("Los delegaciones deben tener al menos 4 empresarios");
                     }else{
                         salir=true;
                     }
                 }
-
             }
             if(opcion!=0 && Number.isInteger(opcion)){
                 AniadirArray(opcion);
@@ -71,11 +70,7 @@ function AniadirArray(opcion){
 function SueldoMedia(array){
     let media;
     for(let i=0; i<array.length; i++){
-        for(let y=0; y<array[i].length; y++){
-            if(y==array[i].length){
-                media+=array[i][y];
-            }
-        }
+                media+=array[i][1];
     }
     return media/array.length;
 }
