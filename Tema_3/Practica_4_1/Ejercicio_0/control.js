@@ -6,23 +6,51 @@ let sueldo;
 let salir;
 let opcion;
 
+    //imprimir menu y validarla
     Menu(opcion);
 
+    //Imprimir total de cada delegacion
     let listaTotal=document.getElementById("ListaTotal");
-    listaTotal.innerHTML+="<li>Sevilla:" +Sevilla.length+ "</li>";
-    listaTotal.innerHTML+="<li>Huelva:" +Huelva.length+ "</li>";
-    listaTotal.innerHTML+="<li>Cadiz:" +Cadiz.length+ "</li>";
+    let tit1=document.getElementById("tit1");
+        tit1.style.display="block";
+    listaTotal.innerHTML+=implimir("sevilla:",Sevilla.length);
+    listaTotal.innerHTML+=implimir("Huelva:",Huelva.length);
+    listaTotal.innerHTML+=implimir("Cadiz:",Cadiz.length);
 
+    //Imprimir Sueldo media de cade  delegacion
     let ListaMedia=document.getElementById("ListaMedia");
-    ListaMedia.innerHTML+="<li>Sevilla: "+SueldoMedia(Sevilla)+"</li>";
-    ListaMedia.innerHTML+="<li>Huelva: "+SueldoMedia(Huelva)+"</li>";
-    ListaMedia.innerHTML+="<li>Cadiz: "+SueldoMedia(Cadiz)+"</li>";
-
+    let tit2=document.getElementById("tit2");
+        tit2.style.display="block";
+    ListaMedia.innerHTML+=implimir("sevilla:",SueldoMedia(Sevilla));
+    ListaMedia.innerHTML+=implimir("Huelva:",SueldoMedia(Huelva));
+    ListaMedia.innerHTML+=implimir("Cadiz:",SueldoMedia(Cadiz));
+    //Ordernar array de meno a mayor
     Sevilla.sort(ordenar);
     Huelva.sort(ordenar);
     Cadiz.sort(ordenar);
 
-    
+    //Pintar cade delegacion de menor a mayor en una tabla
+    let caja=document.getElementById("caja");
+        caja.style.display="block";
+    let tabla=document.getElementById("tabla");
+    tabla.innerHTML+=pintar(Sevilla);
+    tabla.innerHTML+=pintar(Huelva);
+    tabla.innerHTML+=pintar(Cadiz);
+
+    //Sacar sueldo menor y mayor de los delegaciones juntos
+    let tit3=document.getElementById("tit3");
+    let SueldoMenor=document.getElementById("SueldoMenor");
+        tit3.style.display="block";
+    SueldoMenor.innerHTML+=implimir("sevilla:",Sevilla[0][1]);
+    SueldoMenor.innerHTML+=implimir("Huelva:",Huelva[0][1]);
+    SueldoMenor.innerHTML+=implimir("Cadiz:",Cadiz[0][1]);
+
+    let tit4=document.getElementById("tit4");
+        tit4.style.display="block";
+    let SueldoMayor=document.getElementById("SueldoMayor");
+    SueldoMayor.innerHTML+=implimir("sevilla:",Sevilla[Sevilla.length-1][1]);
+    SueldoMayor.innerHTML+=implimir("Huelva:",Huelva[Huelva.length-1][1]);
+    SueldoMayor.innerHTML+=implimir("Cadiz:",Cadiz[Cadiz.length-1][1]);
 
 function Menu(opcion){
     while(!salir){
@@ -39,13 +67,12 @@ function Menu(opcion){
                 alert("Error deben Introducir un numero valido");
             }else{
                 if(opcion==0){
-                    if(Sevilla.length<4 && Huelva.length<4 && Cadiz.length<4){
+                    if(Sevilla.length<4 || Huelva.length<4 || Cadiz.length<4){
                         alert("Los delegaciones deben tener al menos 4 empresarios");
                     }else{
                         salir=true;
                     }
                 }
-
             }
             if(opcion!=0 && Number.isInteger(opcion)){
                 AniadirArray(opcion);
@@ -76,7 +103,8 @@ function AniadirArray(opcion){
 }
 
 function SueldoMedia(array){
-    let media;
+    let media=0;
+    let delegacion=array.length;
     for(let i=0; i<array.length; i++){
         for(let y=0; y<array[i].length; y++){
             if(y==array[i].length){
@@ -87,9 +115,23 @@ function SueldoMedia(array){
     return media/array.length;
 }
 
+function implimir(nombre,valor){
+    return "<li>"+nombre+" "+valor+"</li>";
+}
+
 function ordenar(valor1,valor2){
     if(valor1[1]==valor2[1]){
         return 0;
     }
-    return (valor1[1]>valor2[1])? 1:-1;
+    return (valor1[1]>valor2[1])? 1 : -1;
+}
+
+function pintar(array){
+    for(let i=0; i<array.length; i++){
+        print("<tr>");
+        for(let j=0; j<array[i].length; j++){
+            print("<td>"+array[i][y]+"</td>");
+        }
+        print("</tr>");
+    }
 }
