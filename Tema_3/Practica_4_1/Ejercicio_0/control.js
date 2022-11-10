@@ -17,6 +17,13 @@ let opcion;
     ListaMedia.innerHTML+="<li>Sevilla: "+SueldoMedia(Sevilla)+"</li>";
     ListaMedia.innerHTML+="<li>Huelva: "+SueldoMedia(Huelva)+"</li>";
     ListaMedia.innerHTML+="<li>Cadiz: "+SueldoMedia(Cadiz)+"</li>";
+
+    Sevilla.sort(ordenar);
+    Huelva.sort(ordenar);
+    Cadiz.sort(ordenar);
+
+    
+
 function Menu(opcion){
     while(!salir){
         do{
@@ -78,4 +85,11 @@ function SueldoMedia(array){
         }
     }
     return media/array.length;
+}
+
+function ordenar(valor1,valor2){
+    if(valor1[1]==valor2[1]){
+        return 0;
+    }
+    return (valor1[1]>valor2[1])? 1:-1;
 }
