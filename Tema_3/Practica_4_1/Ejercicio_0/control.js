@@ -32,10 +32,12 @@ let opcion;
     //Pintar cade delegacion de menor a mayor en una tabla
     let caja=document.getElementById("caja");
         caja.style.display="block";
-    let tabla=document.getElementById("tabla");
-    tabla.innerHTML+=pintar(Sevilla);
-    tabla.innerHTML+=pintar(Huelva);
-    tabla.innerHTML+=pintar(Cadiz);
+    let ListaSevilla=document.getElementById("ListaSevilla");
+    let ListaHuelva=document.getElementById("ListaHuelva");
+    let ListaCadiz=document.getElementById("ListaCadiz");
+    ListaSevilla.innerHTML+=Sevilla.map(pintarArray).flat().join('');
+    ListaHuelva.innerHTML+=Huelva.map(pintarArray).flat().join('');
+    ListaCadiz.innerHTML+=Cadiz.map(pintarArray).flat().join('');
 
     //Sacar sueldo menor y mayor de los delegaciones juntos
     let tit3=document.getElementById("tit3");
@@ -44,6 +46,7 @@ let opcion;
     SueldoMenor.innerHTML+=implimir("sevilla:",Sevilla[0][1]);
     SueldoMenor.innerHTML+=implimir("Huelva:",Huelva[0][1]);
     SueldoMenor.innerHTML+=implimir("Cadiz:",Cadiz[0][1]);
+    SueldoMenor.innerHTML+=implimir("Menor de los 3 delegacion",Menor(Sevilla,Huelva,Cadiz));
 
     let tit4=document.getElementById("tit4");
         tit4.style.display="block";
@@ -51,6 +54,7 @@ let opcion;
     SueldoMayor.innerHTML+=implimir("sevilla:",Sevilla[Sevilla.length-1][1]);
     SueldoMayor.innerHTML+=implimir("Huelva:",Huelva[Huelva.length-1][1]);
     SueldoMayor.innerHTML+=implimir("Cadiz:",Cadiz[Cadiz.length-1][1]);
+    SueldoMayor.innerHTML+=implimir("Mayor de los 3 delegacion",Mayor(Sevilla,Huelva,Cadiz));
 
 function Menu(opcion){
     while(!salir){
@@ -104,10 +108,9 @@ function AniadirArray(opcion){
 
 function SueldoMedia(array){
     let media=0;
-    let delegacion=array.length;
     for(let i=0; i<array.length; i++){
         for(let y=0; y<array[i].length; y++){
-            if(y==array[i].length){
+            if(y==array[i].length-1){
                 media+=array[i][y];
             }
         }
@@ -126,12 +129,16 @@ function ordenar(valor1,valor2){
     return (valor1[1]>valor2[1])? 1 : -1;
 }
 
-function pintar(array){
-    for(let i=0; i<array.length; i++){
-        print("<tr>");
-        for(let j=0; j<array[i].length; j++){
-            print("<td>"+array[i][y]+"</td>");
-        }
-        print("</tr>");
-    }
+function pintarArray(array){
+    return "<li>"+array[0]+": "+array[1]+"</li>"
+}
+function Menor(array1,array2,array3){
+    let Me=[array1[0][1],array2[0][1],array3[0][1]];
+    Me.sort();
+    return Me[0];
+}
+function Mayor(array1,array2,array3){
+    let Ma=[array1[array1.length-1][1],array2[array2.length-1][1],array3[array3.length-1][1]];
+    Ma.sort();
+    return Ma[Ma.length-1];
 }
