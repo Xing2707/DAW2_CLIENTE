@@ -35,7 +35,7 @@ let opcion;
     let ListaSevilla=document.getElementById("ListaSevilla");
     let ListaHuelva=document.getElementById("ListaHuelva");
     let ListaCadiz=document.getElementById("ListaCadiz");
-    ListaSevilla.innerHTML+=Sevilla.map(pintarArray).flat().join('');
+    ListaSevilla.innerHTML+=Sevilla.map(pintarArray).flat().join(''); //Para uso de array.map necesita flat() para eliminar , de array [elemento1 , elemento2] si no usa este fucion pintara en la pantalla lista de array con coma.join('') sirve para el arreglo externo.
     ListaHuelva.innerHTML+=Huelva.map(pintarArray).flat().join('');
     ListaCadiz.innerHTML+=Cadiz.map(pintarArray).flat().join('');
 
