@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="parrafo"></p>
+    </div>
+    <script>
+        class Mascotas{
+            constructor(nombre,comidaGramo){
+                this.nombre=nombre;
+                this._comidaGramo=comidaGramo;
+            }
+            get comidaGramo(){
+                return this._comidaGramo;
+            }
+
+            ToString() {
+                return "Nombre: "+this.nombre+"<br>Cantidad de Comidad en gramos al dia: "+this.comidaGramo; 
+            }
+        }
+        class MascotasComida extends Mascotas{
+            constructor(nombre,comidaGramo){
+                super(nombre,comidaGramo);
+            }
+            MascotaDias(){
+                let bolsa=3000;
+                let total=bolsa/super.comidaGramo;
+                return "La bolsa de "+bolsa+"/g se puede consumir en: "+total +" dias";
+            }
+            ToString(){
+                return super.ToString()+"<br>"+this.MascotaDias();
+            }
+        }
+
+        Perro=new MascotasComida("Jony",500);
+        Gato=new MascotasComida("Jeny",100);
+        Tortuga=new MascotasComida("GAW",20);
+
+        let parrafo=document.getElementById("parrafo");
+        parrafo.innerHTML+=Perro.ToString()+"<br>";
+        parrafo.innerHTML+=Gato.ToString()+"<br>";
+        parrafo.innerHTML+=Tortuga.ToString()+"<br>";
+    </script>
+</body>
+</html>
