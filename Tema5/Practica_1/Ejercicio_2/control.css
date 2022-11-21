@@ -1,5 +1,6 @@
-div{float: left;
-    height: 200px;
-    width: 15%;
-    background-color: aqua;
+html,body{height: 98%;}
+
+#cartas{
+    height: 100%;
+    margin: auto;
 }
