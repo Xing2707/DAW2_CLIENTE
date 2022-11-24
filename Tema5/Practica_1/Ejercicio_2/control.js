@@ -8,11 +8,12 @@ function generarCarta(total){
     let estilo="style='float:left; height:300px; width:16%; background-color:aqua; margin:10px;'";
     let estiloIMG="style='width:100%; height:100%; display:none'";
     for(let i=0; i<total; i++){
-        cartas.innerHTML+="<div id='carta"+(i+1)+"'"+estilo+"onclic='mostrar()'><img src='"+arrayCarta[i]+"' "+estiloIMG+"/></div>"
+        cartas.innerHTML+="<div id='carta"+(i+1)+"'"+estilo+"onclick='mostrar()'><img src='"+arrayCarta[i]+"' "+estiloIMG+"/></div>"
     }
 }
 
 function mostrar(){
+    estiloIMG="style='width:100%; height:100%; display:block'";
 }
 
 function partiCarta(){
