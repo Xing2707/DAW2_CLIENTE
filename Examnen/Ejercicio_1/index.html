@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="control.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Formulario deicografico</h1>
+    <form action="index.html" method="get">
+        <label>
+            <span>Nombre de disco:</span>
+            <input type="text" id="nombreDisco">
+        </label>
+        <label>
+            <span>Nombre de autor o grupo:</span>
+            <input type="text" id="nombreAutor">
+        </label><br>
+        <label>
+            <span>Tipo de musica:</span><br>
+            <label>
+                <input type="radio" name="tipoMusica" id="rock" value="rock">Rock<br>
+                <input type="radio" name="tipoMusica" id="pop" value="pop">Pop<br>
+                <input type="radio" name="tipoMusica" id="indie" value="indie">Indie
+            </label>
+        </label><br>
+        <label><span>Comentarios</span>
+            <textarea id="textA">--Comentario sobre el album---</textarea>
+        </label>
+        <input type="submit" name="Enivar" value="Enviar" id="Enviar">
+        <input type="reset" name="Limpiar datos" value="Limpiar datos">
+    </form>
+</body>
+</html>

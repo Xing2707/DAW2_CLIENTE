@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="contro.js"></script>
+    <style>
+        form{
+            margin: auto;
+            margin-top:1%;
+            border: 5px outset cyan;
+            width: 50%;
+            padding: 1%;
+            height: 300px;
+            text-align: center;
+        }
+        hr{
+            border-top: 3px solid orange;
+            margin-left: -2%;
+            margin-right: -2%;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="index.html" method="get" id="formulario">
+        <laber>Describete <input type=text" name="Describete" id="Describete" minlength="20" maxlength="100" ></laber><hr><br>
+        <label>
+            <span>Sexo:</span>
+            Hombre<input type="radio" name="Sexo" id="Hombre" value="hombre">
+            Mujer<input type="radio" name="Sexo" id="Mujer" value="mujer">
+        </label><hr><br>
+        <label>
+            <span>hobbys</span>
+            Lectura<input type="checkbox" name="hobbys" id="Lectura" value="Lectura">
+            Cine<input type="checkbox" name="hobbys" id="Cine" value="Cine">
+            Juegos<input type="checkbox" name="hobbys" id="Juegos" value="Juegos">
+            Deporte<input type="checkbox" name="hobbys" id="Deporte" value="Deporte">
+        </label><hr><br>
+
+        <label>
+            <span>Color:</span>
+            rojo<input type="radio" name="color" id="rojo"  value="rojo" onclick="cambiardecolor()">
+            azul<input type="radio" name="color" id="azul"  value="azul" onclick="cambiardecolor()">
+            verde<input type="radio" name="color" id="verde"  value="verde" onclick="cambiardecolor()">
+        </label><hr><br>
+        <select id="provincia"><span>Provincia</span>
+            <option value="Madrid">Madrid</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Valencia">Valencia</option>
+        </select>
+        <input type="submit" value="Enviar" id="Enviar"/>
+    </form>
+</body>
+</html>

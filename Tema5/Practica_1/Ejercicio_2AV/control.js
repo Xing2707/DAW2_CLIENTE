@@ -1,126 +1,138 @@
-var game={
-    padre: '',
-    carta: 0,
-    gameWidth: 600,
-    gameHeight: 600,
-    arrayDato: [],
-    arrayCarta: [],
-    numTurn:0,
-    numCarta:10,
-    inic: function(opcion){
-        this.datoInic(opcion);
+var game = {
+    el: '',
+    blocks:10, 
+    gameWidth: 600, 
+    gameHeight: 600, 
+    dataArr: [],
+    judgeArr: [],
+    turnNum: 0,
+    picNum: 10, 
+
+    init: function (options) {
+        this.initData(options);
         this.render();
         this.handle();
     },
-    datoInic: function(opcion){
-        this.opcion = opcion;
-        this.padre = opcion.padre;
-        this.carta = this.numCarta;
-        this.getArrayDato();
+
+    initData: function (options) {
+        this.options = options;
+        this.el = options.el;
+        this.blocks;
+        this.getdataArr();
     },
+
+    getdataArr: function () {
+        var randomArr = this.randomArr(); 
+        var halfBlocks = this.blocks / 2;
+        var dataArr = [];
     
-    getArrayDato: function(){
-        var arrayRandom = this.arrayRandom();
-        var imagenes = this.carta /2;
-        var arrayDato = [];
-
-        for(i=0; i<imagenes; i++){
-            var num = arrayRandom[i];
-                var url = {
-                    url: './IMG/cara'+num+'.jpg',
-                    id:'cara'+num
+        for(var i = 0; i < halfBlocks; i ++) {
+            var num = randomArr[i];
+                var info = {
+                    url: './IMG/cara' + num + '.jpg',
+                    id: num
                 }
-            arrayDato.push(url,url);
+                dataArr.push(info, info);
         }
-        this.arrayDato=this.shuffle(arrayDato);
+        //  console.log(dataArr);
+        this.dataArr = this.shuffle(dataArr);
     },
 
-    arrayRandom: function(){
-
-        var numCarta = this.numCarta;
-        var array=[];
-        for(i=0; i<numCarta; i++){
-            array.push(i+1);
+    randomArr: function () {
+        var picNum = this.picNum/2;
+        var arr = [];
+        for(i = 0; i < picNum; i ++) {
+        arr.push(i+1);
         }
-        return this.shuffle(array);
+        //console.log(arr);
+        return this.shuffle(arr);
     },
 
-    shuffle: function(array){
-        return array.sort(function(){
+    shuffle: function (arr) {
+        return arr.sort(function () {
             return 0.5 - Math.random();
         })
     },
-    render: function(){
-        var carta=this.carta;
-        var gameWidth=this.gameWidth;
-        var gameHeight=this.gameHeight;
-        var cartaWidth = gameWidth / (this.numCarta*2);
-        var cartaHeight = gameHeight / (this.numCarta*2);
-        var arrayDato = this.arrayDato;
 
-        for(i=0; i<carta; i++){
-            var info = arrayDato[i];
+    render: function () {
+        var blocks = this.blocks;
+        var gameWidth = this.gameWidth;
+        var gameHeight = this.gameHeight;
+        var blockWidth = gameWidth/2;
+        var blockHeight = gameHeight/2;
+        var dataArr = this.dataArr;
+    
+        for(i = 0; i < blocks; i ++) {
+            var info = dataArr[i];
             var oBlock = document.createElement('div');
             var oPic = document.createElement('div');
-            oPic.style.backgroundImage ='url('+info.url+')';
-            oBlock.style.width = cartaWidth+'px';
-            oBlock.style.height = cartaHeight+'px';
+            oPic.style.backgroundImage = 'url(' + info.url + ')';
+            oBlock.style.width = blockWidth + 'px';
+            oBlock.style.height = blockHeight + 'px';
             oBlock.picid = info.id;
-            oPic.setAttribute('class','pic');
-            oBlock.setAttribute('class','block');
+            oPic.setAttribute('class', 'pic');
+            oBlock.setAttribute('class', 'block');
             oBlock.appendChild(oPic);
-            this.padre.appendChild(oBlock);
+            this.el.appendChild(oBlock);
         }
     },
-    handle: function(){
+     
+    handle: function () {
         var self = this;
-        this.padre.onclick = function(p){
-            var dom = p.target;
+        this.el.onclick = function (e) {
+            var dom = e.target;
             var isBlock = dom.classList.contains('block');
-            if(isBlock){
+            if(isBlock) {
                 self.handleBlock(dom);
             }
         }
     },
 
-    handleBlock: function(dom){
-        var picId=dom.picid;
-        var arrayCarta=this.arrayCarta;
-        var cartaLength = arrayCarta.push({
-            id:picId,
+    handleBlock: function (dom) {
+        var picId = dom.picid;
+        var judgeArr = this.judgeArr;
+        var judgeLength = judgeArr.push({
+            id: picId,
             dom: dom
         });
         dom.classList.add('on');
-
-        if(cartaLength === 2) { this.judgePick();}
+        
+        if(judgeLength === 2) { this.judgePic();}
+       
         this.judgeWin();
     },
 
-    judgePick: function(){
-        var arrayCarta = this.arrayCarta;
-        var isSamePick = arrayCarta[0].id === arrayCarta[1].id;
-        if(isSamePick){
-            this.numTurn +=2;
-        }else{
-            var picDom1 = arrayCarta[0].dom;
-            var picDom2 = arrayCarta[1].dom;
-            setTimeout(function(){
-                picDom1.classList.remove('on');
-                picDom2.classList.remove('on');
-            },1000)
-        }
-        arrayCarta.length = 0;
+    judgePic: function () {
+    var judgeArr = this.judgeArr; 
+        var isSamePic = judgeArr[0].id === judgeArr[1].id;
+        
+        if(isSamePic) {
+            this.turnNum += 2;
+        } else {
+            var picDom1 = judgeArr[0].dom;
+            var picDom2 = judgeArr[1].dom;
+            setTimeout(function () {
+            picDom1.classList.remove('on');
+            picDom2.classList.remove('on');
+        }, 800)}
+        judgeArr.length = 0;
+        setTimeout(function(){
+            var cartas=document.getElementById("cartas");
+            cartas.setAttribute('class','noclick');
+         },600);
+         setTimeout(function(){
+            var cartas=document.getElementById("cartas");
+            cartas.removeAttribute("class");
+         },1100);
     },
-
-    judgeWin: function(){
-        if(this.numTurn === this.carta){
-            setTimeout(function(){
-                alert('Victoria');
-            },800)
-        }
+    judgeWin: function () {
+    
+    if(this.turnNum === this.blocks) {
+        setTimeout(function () {
+            alert("VICTORIA");
+        }, 300)}
     }
 }
-
-game.inic({
-    padre: document.getElementById('cartas')
-})
+    
+game.init({
+el: document.getElementById('cartas')});

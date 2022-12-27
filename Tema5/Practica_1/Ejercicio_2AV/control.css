@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+html,body{
+    width: 98%;
+    height: 98%;
+    margin: auto;
+}
 
 #cartas{
     height: 600px;
@@ -15,6 +20,7 @@
     width:25%;
     height: 25%;
     border: 2px solid black;
+    background-color: aquamarine;
 }
 
 .block:hover{
@@ -26,4 +32,13 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
+    transform: scaleX(0);
+    transition:transform .2s;
+    background-size: 100%;
+}
+.block.on .pic{
+    transform: scaleX(1);
+}
+.noclick{
+    pointer-events: none;
 }

@@ -1,0 +1,72 @@
+form method=get action=index51.html id=formulario1;
+Ingrese clave:
+input type=password id=clave1 name=clave1 size=20 required;
+br; Repita clave:
+input type=password id=clave2 name=clave2 size=20 required;
+br;
+input type=submit id=confirmar name=confirmar value=Confirmar;
+/form;
+script;
+document.getElementById(formulario1).addEventListener(&#39;submit&#39;, validar);
+
+function validar(evt) {
+let cla1 = document.getElementById(clave1).value;
+let cla2 = document.getElementById(clave2).value;
+if (cla1 != cla2) {
+alert(&#39;Las claves ingresadas son distintas&#39;);
+evt.preventDefault();
+}
+}
+/script;
+
+
+!DOCTYPE html
+html lang=en
+head
+    meta charset=UTF-8
+    meta http-equiv=X-UA-Compatible content=IE=edge
+    meta name=viewport content=width=device-width, initial-scale=2.0
+    titleTMP/title
+/head
+body
+Introduce tus hobbies preferidosbr
+form id=miFormulario action= method=post onsubmit=return valida(this)
+p
+  Hobbie 1: input type=text id=marca1 name=hobbie/
+br /
+  Hobbie 2: input type=text name=hobbie2 /
+  ! Hobbie 2: input type=text id=marca2 /
+br /
+  Hobbie 3: input type=text name=hobbie3 /
+br /
+input type=submit value=Comprobar /
+input type=reset value=Limpiar datos /
+/p
+/form
+script
+function valida(f) {
+  var ok = true;
+  var msg = Debes escribir contenido en los campos:\n;
+  let cla1 = document.getElementById(marca1).value;
+  if (cla1 == "")
+  {
+    msg += - Hobbie 1\n;
+    ok = false;
+  }
+  if(f.elements[1].value == "")
+  {
+    msg += - Hobbie 2\n;
+    ok = false;
+  }
+  if(f.hobbie3.value == "")
+  {
+    msg += - Hobbie 3\n;
+    ok = false;
+  }
+  if(ok == false)
+    alert(msg);
+  return ok;
+  }
+/script
+/body
+/html

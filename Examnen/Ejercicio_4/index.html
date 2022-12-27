@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo">Jugador</p>
+    <script>
+        class Jugador{
+            constructor(nombre,edad,puntuacion){
+                this._nombre=nombre;
+                this._edad=edad;
+                this._puntuacion=puntuacion;
+            }
+            set nombre(nombre){
+                this._nombre=nombre;
+            }
+            get nombre(){
+                return this._nombre;
+            }
+
+            set edad(edad){
+                this._nombre=nombre;
+            }
+            get edad(){
+                return this._edad;
+            }
+
+            set puntuacion(puntuacion){
+                this._nombre=nombre;
+            }
+            get puntuacion(){
+                return this._puntuacion;
+            }
+        }
+
+        let nombre;
+        let edad;
+        let puntuacion;
+        let validar=false;
+            nombre=prompt("Introduce Nombre");
+            while(!validar){
+                edad=prompt("Introduce Edad");
+                if(!Number.parseInt(edad) || edad<0){
+                alert("error Edad");
+                }else{
+                    validar=true;
+                }
+            }
+            validar=false;
+            while(!validar){
+                puntuacion=prompt("Introduce Puntuacion");
+                if(!Number.parseInt(puntuacion) || puntuacion<0){
+                alert("error Puntuacion");
+                }else{
+                    validar=true;
+                }
+            }
+            Persona=new Jugador(nombre,edad,puntuacion);
+        
+            parrafo.innerHTML="Nombre: "+Persona.nombre+"<br>Edad: "+Persona.edad+"<br>Puntuacion: "+Persona.puntuacion;
+    </script>
+</body>
+</html>
