@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #caja{
+            margin: auto;
+            margin-top: 200px;
+            height: 200px;
+            width: 600px;
+            border: 5px outset greenyellow;
+            padding: 3%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="caja">
+        <h1 id="contenido">Este es un titulo dinamico</h1>
+        <button onclick="CambiarColor()">Cambiar Color</button>
+        <button onclick="CambiarFuente()">Cambiar Fuente</button>
+    </div>
+    <script >
+        function CambiarColor(){
+            let item = document.getElementById("contenido");
+            let RandColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+            item.style.color= RandColor;
+        }
+
+        function CambiarFuente(){
+            let item = document.getElementById("contenido");
+            let fuentes = ["Arial","cursive","monospace","serif","fantasy","italic"];
+            fuentes.sort((a,b)=> 0.5 - Math.random());
+            item.style.fontFamily=fuentes.shift();
+        }
+    </script>
+</body>
+</html>

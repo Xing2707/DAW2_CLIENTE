@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.html" method="get" id="formulario">
+        <label for="numero">Numero de check box <input type="number" name="numero" id="numero"></label>
+        <label><input type="submit" value="Crear Checkbox" id="Enviar"></label><br>
+        <label id="labechekbox"></label>
+    </form>
+    <script>
+
+        let recipido = document.getElementById("Enviar");
+        recipido.addEventListener("click",function(e){
+            e.preventDefault();
+            let formulario =document.getElementById("formulario");
+            let inputvalue =document.getElementById("numero").value;
+            let labechekbox = document.getElementById("labechekbox");
+            let chekboxs = document.getElementsByClassName("chekbox");
+
+            if(chekboxs.length !=0){
+                if(labechekbox.childNodes.length > 0){
+                    while(labechekbox.firstChild){
+                        labechekbox.removeChild(labechekbox.firstChild);
+                    }
+                }
+            }
+
+            for(i=0; i<inputvalue; i++){
+                let checbox =document.createElement("input");
+                let numeroRandom = document.createTextNode(Math.random()*100);
+                checbox.setAttribute("type","checkbox");
+                checbox.setAttribute("name","chekbox");
+                checbox.setAttribute("class","chekbox");
+                labechekbox.appendChild(checbox);
+                labechekbox.appendChild(numeroRandom);
+                labechekbox.innerHTML+="<br>";
+            }
+        });
+        
+    </script>
+</body>
+</html>
